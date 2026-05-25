@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="#FFFFFF"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+
+    <!-- Sprite del pokémon -->
+    <ImageView
+        android:id="@+id/ivSpritePokemonSelector"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="Sprite"/>
+
+    <!-- Nombre del pokémon -->
+    <TextView
+        android:id="@+id/tvNombrePokemonSelector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:textColor="#212121"
+        android:paddingStart="12dp"/>
+
+    <!-- Indicador visual de que se puede pulsar -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="22sp"
+        android:textColor="#CC0000"
+        android:textStyle="bold"/>
+
+</LinearLayout>

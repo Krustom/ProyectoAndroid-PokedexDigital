@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Barra superior roja con botón volver y nombre del equipo -->
+    <LinearLayout
+        android:id="@+id/barraRojaEditarEquipo"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="#CC0000"
+        android:paddingStart="8dp"
+        android:paddingTop="55dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Botón para volver a la lista de equipos -->
+        <ImageButton
+            android:id="@+id/btnVolverEditarEquipo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#FFFFFF"
+            android:padding="8dp"
+            android:contentDescription="Volver" />
+
+        <!-- Nombre del equipo que estoy editando -->
+        <TextView
+            android:id="@+id/tvTituloEquipo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- Espaciador para centrar el título -->
+        <View
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <!-- Uso un ScrollView para que todo el contenido sea desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título de la sección de huecos -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mi equipo (máx. 6 Pokémon)"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Los 6 huecos del equipo con los sprites -->
+            <LinearLayout
+                android:id="@+id/layoutHuecosEquipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"/>
+
+            <!-- Separador visual -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_margin="16dp"/>
+
+            <!-- Título del buscador -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Añadir Pokémon"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingStart="16dp"
+                android:paddingBottom="8dp"/>
+
+            <!-- Barra de búsqueda por nombre -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <EditText
+                    android:id="@+id/etBuscarPokemonEquipo"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Buscar por nombre..."
+                    android:inputType="text"
+                    android:autofillHints="no"
+                    android:background="#FFFFFF"
+                    android:padding="10dp"/>
+
+                <!-- Botón para buscar el pokémon escrito -->
+                <Button
+                    android:id="@+id/btnBuscarPokemon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Buscar"
+                    android:backgroundTint="#CC0000"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="8dp"/>
+
+            </LinearLayout>
+
+            <!-- Resultado de la búsqueda manual -->
+            <LinearLayout
+                android:id="@+id/layoutResultadoBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFFFFF"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <!-- Sprite del pokémon encontrado -->
+                <ImageView
+                    android:id="@+id/ivResultadoPokemon"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Sprite del Pokémon"/>
+
+                <!-- Nombre del pokémon encontrado -->
+                <TextView
+                    android:id="@+id/tvResultadoNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="#212121"
+                    android:paddingStart="12dp"/>
+
+                <!-- Botón para añadirlo al equipo -->
+                <Button
+                    android:id="@+id/btnAnadirAlEquipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Añadir"
+                    android:backgroundTint="#CC0000"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+            <!-- Separador visual -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Título de la lista de pokémon disponibles -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="O elige de la lista:"
+                android:textColor="#212121"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="4dp"/>
+
+            <!-- Etiqueta del filtro por tipo -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Filtrar por tipo:"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="4dp"/>
+
+            <!-- Chips desplazables horizontalmente, se rellenan desde el código -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="8dp"
+                android:contentDescription="Filtros por tipo de Pokémon">
+
+                <LinearLayout
+                    android:id="@+id/layoutChipsTipos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"/>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Lista de pokémon disponibles fuera del ScrollView para que sea independiente -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPokemonDisponibles"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"/>
+
+</LinearLayout>

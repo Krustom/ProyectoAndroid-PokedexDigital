@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permiso de Internet para conectar con la PokeAPI y Firebase -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:targetApi="31">
+
+        <!-- LOGIN: es la primera pantalla que ve el usuario al abrir la app -->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- REGISTRO: pantalla para crear una cuenta nueva -->
+        <activity
+            android:name=".activity.RegistroActivity"
+            android:exported="false"/>
+
+        <!-- MAIN: pantalla principal con la lista de pokémon -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+
+        <!-- DETALLE: pantalla con la información completa de un pokémon -->
+        <activity
+            android:name=".activity.DetallePokemonActivity"
+            android:exported="false"/>
+
+        <!-- FAVORITOS: pantalla con los pokémon guardados como favoritos -->
+        <activity
+            android:name=".activity.FavoritosActivity"
+            android:exported="false"/>
+
+        <!-- EQUIPO: pantalla para crear y gestionar equipos de hasta 6 pokémon -->
+        <activity
+            android:name=".activity.EquipoActivity"
+            android:exported="false"/>
+
+        <!-- EDITAR EQUIPO: pantalla para añadir y quitar pokémon de un equipo -->
+        <activity
+            android:name=".activity.EditarEquipoActivity"
+            android:exported="false"/>
+
+        <!-- Modo Administrador -->
+        <activity
+            android:name=".activity.AdminActivity"
+           />
+
+
+    </application>
+
+</manifest>

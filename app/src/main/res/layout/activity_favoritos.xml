@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Barra superior roja con botón volver y título -->
+    <LinearLayout
+        android:id="@+id/barraRojaFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="#CC0000"
+        android:paddingStart="8dp"
+        android:paddingTop="55dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Botón para volver a la pantalla anterior -->
+        <ImageButton
+            android:id="@+id/btnVolver"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#FFFFFF"
+            android:padding="8dp"
+            android:contentDescription="Volver" />
+
+        <!-- Título de la pantalla -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mis Favoritos"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- Espaciador para centrar el título visualmente -->
+        <View
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <!-- Barra de búsqueda para filtrar favoritos por nombre -->
+    <EditText
+        android:id="@+id/etBuscarFavorito"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Buscar en favoritos..."
+        android:inputType="text"
+        android:autofillHints="no"
+        android:textColor="#212121"
+        android:textColorHint="#757575"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+    <!-- Mensaje que aparece cuando no hay favoritos guardados -->
+    <TextView
+        android:id="@+id/tvSinFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No tienes pokémon favoritos aún"
+        android:textColor="#757575"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone"/>
+
+    <!-- Lista de tarjetas de favoritos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"/>
+
+</LinearLayout>

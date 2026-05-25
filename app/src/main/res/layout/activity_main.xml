@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Barra superior roja con título y botones -->
+    <LinearLayout
+        android:id="@+id/barraRoja"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="#CC0000"
+        android:paddingStart="16dp"
+        android:paddingTop="55dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Título de la app -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Pokédex Digital"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- Botón para ir a favoritos -->
+        <ImageButton
+            android:id="@+id/btnIrFavoritos"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/favorite"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#FFFFFF"
+            android:contentDescription="Ir a favoritos" />
+
+        <!-- Botón para ordenar la lista -->
+        <ImageButton
+            android:id="@+id/btnFiltro"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/filtro"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#FFFFFF"
+            android:contentDescription="Filtrar lista" />
+
+        <!-- Botón para cerrar sesión -->
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/account"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#FFFFFF"
+            android:contentDescription="Cerrar sesión" />
+
+    </LinearLayout>
+
+    <!-- Fila horizontal con los chips de filtro por tipo -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:scrollbars="none"
+        android:contentDescription="Filtros por tipo">
+
+        <LinearLayout
+            android:id="@+id/layoutTipos"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="4dp"/>
+
+    </HorizontalScrollView>
+
+    <!-- Barra de búsqueda por nombre -->
+    <EditText
+        android:id="@+id/etBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Buscar Pokémon..."
+        android:inputType="text"
+        android:autofillHints="no"
+        android:textColor="#212121"
+        android:textColorHint="#757575"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+    <!-- Lista de pokémon en scroll vertical -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPokemon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"/>
+
+</LinearLayout>

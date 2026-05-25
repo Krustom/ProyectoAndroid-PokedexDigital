@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <!-- Imagen del Pokémon -->
+        <ImageView
+            android:id="@+id/ivPokemonFavorito"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_menu_report_image"
+            android:scaleType="fitCenter"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <!-- Número Pokedex -->
+            <TextView
+                android:id="@+id/tvNumeroFavorito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#000"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:textStyle="bold"/>
+
+            <!-- Nombre -->
+            <TextView
+                android:id="@+id/tvNombreFavorito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Pokémon"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#212121"/>
+        </LinearLayout>
+
+        <!-- He eliminado el botón de borrar de aquí, ya que esta es la lista general -->
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
